@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India–Philippines Healthcare Network | LIMRA Healthcare</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <!-- Google Material Symbols (Line style) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#26265F',
+              heroNavy: '#26265F',
+              dark: '#26265F',
+              canvas: '#F7F7F5',
+              red: '#EE4038',
+              cyan: '#40F6FF',
+              coral: '#FF8D8D',
+              border: '#E4E4E8',
+              muted: '#62627A',
+            }
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F7F7F5] text-[#26265F] font-sans antialiased selection:bg-[#EE4038] selection:text-white">
+
+  <!-- ================= FIXED NAVIGATION BAR ================= -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24 h-16 sm:h-[72px] lg:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group" aria-label="LIMRA Healthcare Home">
+        <img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[43px] sm:h-[47px] lg:h-[53px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-7 lg:space-x-10 text-xs lg:text-[13px] font-bold tracking-[0.06em] text-white uppercase">
+        <a href="index.html" class="text-white hover:text-[#40F6FF] transition-colors py-1 flex items-center gap-1.5" title="Home" aria-label="Home">
+          <svg class="w-4 h-4 mb-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+          <span>HOME</span>
+        </a>
+        <a href="about.html" class="hover:text-[#40F6FF] transition-colors py-1">ABOUT</a>
+        <a href="platform.html" class="hover:text-[#40F6FF] transition-colors py-1">PLATFORM</a>
+        <a href="network.html" class="text-[#40F6FF] py-1 border-b-2 border-[#40F6FF]">NETWORK</a>
+        <a href="contact.html" class="hover:text-[#40F6FF] transition-colors py-1">CONTACT</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-[#40F6FF] focus:outline-none" aria-label="Open navigation menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-[#26265F]/98 backdrop-blur-xl hidden flex flex-col justify-between p-8 text-white">
+    <div>
+      <div class="flex justify-between items-center pb-6 border-b border-white/10">
+        <a href="index.html"><img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[43px] w-auto object-contain"></a>
+        <button id="close-mobile-drawer" class="p-2 text-white/80 hover:text-white">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl font-bold tracking-wide uppercase mt-8">
+        <a href="index.html" class="mobile-nav-link text-white hover:text-[#40F6FF] flex items-center gap-3">
+          <svg class="w-5 h-5 text-[#40F6FF]" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+          <span>HOME</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link hover:text-[#40F6FF]">ABOUT</a>
+        <a href="platform.html" class="mobile-nav-link hover:text-[#40F6FF]">PLATFORM</a>
+        <a href="network.html" class="mobile-nav-link text-[#40F6FF]">NETWORK</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-[#40F6FF]">CONTACT</a>
+      </nav>
+    </div>
+    <div class="pt-8 border-t border-white/10">
+      <button class="open-inquiry-modal w-full py-3.5 bg-[#EE4038] text-white font-semibold text-center block uppercase tracking-wider text-sm">
+        Explore Collaboration
+      </button>
+      <p class="text-xs text-white/50 text-center mt-4 font-mono">Chennai, India • Manila, Philippines</p>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 1: HERO (PDF PAGE 1 - SAME STYLE AS PLATFORM HERO) ================= -->
+  <!-- Full-width edge-to-edge Manila skyline photo with right bleed 15% transparent navy solid box touching nav bar bottom line -->
+  <section class="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] xl:min-h-[740px] flex items-stretch justify-end overflow-hidden pt-16 sm:pt-[72px] lg:pt-20">
+    
+    <!-- Full-width Edge-to-Edge Background Image (Manila skyline from PDF Page 1) -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="assets/network-hero-manila-night.jpg" 
+        alt="India-Philippines Healthcare Network skyline" 
+        class="w-full h-full object-cover object-[40%_center] sm:object-center"
+      >
+      <!-- Subtle ambient tone -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 pointer-events-none"></div>
+    </div>
+
+    <!-- Right Bleed Navy Solid Overlay Panel (15% Transparency, 85% Opacity, touching right edge completely) -->
+    <div class="relative z-10 w-full lg:w-[46%] xl:w-[42%] bg-[#26265F]/85 backdrop-blur-[4px] flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20 text-white border-l-0 lg:border-l border-white/10">
+      <div class="max-w-xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-semibold text-[#40F6FF] leading-[1.12] tracking-tight mb-6 sm:mb-8 font-sans">
+          India–<br>Philippines<br>Healthcare<br>Network
+        </h1>
+        
+        <!-- Coral accent line (1:1 with PDF) -->
+        <div class="w-16 h-1 bg-[#EE4038] mb-8"></div>
+
+        <p class="text-base sm:text-lg lg:text-[19px] xl:text-[21px] text-white font-normal leading-[1.65] font-sans">
+          Connecting healthcare institutions, specialist expertise and senior leadership across India and the Philippines to develop credible opportunities for clinical, academic and institutional cooperation.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= SECTION 2: STRATEGIC HEALTHCARE PARTNERSHIPS (PDF PAGE 2) ================= -->
+  <!-- Left: Header + Exploratory Text + 4x2 Grid of Partnership Areas | Right: Modern Hospital Atrium Doctors Portrait -->
+  <section class="w-full bg-white py-16 sm:py-20 lg:py-28 border-b border-[#E4E4E8]">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24">
+      
+      <!-- Split Row: 8 cols Left Content, 4 cols Right Portrait Image (stretching to full height) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch">
+        
+        <!-- Left Column: Title, Narrative, 4x2 Cards Grid, Trust Notice (~65% width) -->
+        <div class="lg:col-span-8 flex flex-col justify-between">
+          
+          <!-- Header with Red underline accent (1:1 with PDF Page 2) -->
+          <div class="mb-6 lg:mb-8">
+            <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#26265F] tracking-tight font-sans inline-block relative pb-3">
+              Strategic Healthcare Partnerships
+              <span class="absolute bottom-0 left-0 w-20 h-1 bg-[#EE4038]"></span>
+            </h2>
+          </div>
+
+          <p class="text-base sm:text-lg text-[#26265F] font-normal leading-[1.65] font-sans mb-10 max-w-4xl">
+            Where there is clear mutual interest and institutional alignment, LIMRA Health Care can facilitate exploratory discussions in the following areas:
+          </p>
+
+          <!-- 4 Columns x 2 Rows Grid of 8 Partnership Areas (matching PDF Page 2) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 mb-10">
+            
+            <!-- Box 1: Centres of Excellence -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Star / Award badge -->
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7l1.5 3.5l3.5.5l-2.5 2.5l.5 3.5l-3-2l-3 2l.5-3.5l-2.5-2.5l3.5-.5z" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Centres of Excellence
+              </span>
+            </div>
+
+            <!-- Box 2: Specialty and Service-Line Development -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Stethoscope / specialty service contour -->
+                  <path d="M6 4v7a6 6 0 0 0 12 0V4" />
+                  <line x1="6" y1="4" x2="4" y2="4" />
+                  <line x1="20" y1="4" x2="18" y2="4" />
+                  <circle cx="18" cy="16" r="2" />
+                  <path d="M12 17v2a3 3 0 0 0 6 0v-1" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Specialty and Service-Line Development
+              </span>
+            </div>
+
+            <!-- Box 3: Clinical and Technology Partnerships -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Medical cross / technology microchip -->
+                  <rect x="4" y="4" width="16" height="16" rx="0" />
+                  <path d="M12 8v8M8 12h8" />
+                  <circle cx="4" cy="12" r="1" fill="#EE4038" />
+                  <circle cx="20" cy="12" r="1" fill="#EE4038" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Clinical and Technology Partnerships
+              </span>
+            </div>
+
+            <!-- Box 4: Training and Academic Cooperation -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Graduation / academic exchange / lecture -->
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Training and Academic Cooperation
+              </span>
+            </div>
+
+            <!-- Box 5: Hospital Management Collaboration -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Hospital architecture / organization chart -->
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                  <path d="M10 6.5h4M10 17.5h4M6.5 10v4M17.5 10v4" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Hospital Management Collaboration
+              </span>
+            </div>
+
+            <!-- Box 6: Healthcare Investment -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Beaker / laboratory investment / capital growth -->
+                  <path d="M10 2v4.5l-5 9.5a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3L14 6.5V2" />
+                  <line x1="8.5" y1="2" x2="15.5" y2="2" />
+                  <path d="M7 15h10" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Healthcare Investment
+              </span>
+            </div>
+
+            <!-- Box 7: Joint Ventures -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Handshake / mutual joint venture alliance -->
+                  <path d="M7 11l4.5 4.5a2 2 0 0 0 2.8 0L20 9" />
+                  <path d="M2 13l5 5a2 2 0 0 0 2.8 0l2.2-2.2" />
+                  <path d="M16 5l5 5" />
+                  <path d="M12 3l3 3" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Joint Ventures
+              </span>
+            </div>
+
+            <!-- Box 8: Other Mutually Agreed Institutional Models -->
+            <div class="bg-[#DDF8FA] p-5 sm:p-6 min-h-[120px] flex items-center space-x-4 border-t-2 border-transparent hover:border-[#EE4038] transition-all group">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-[#EE4038] group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Strategic network node matrix -->
+                  <circle cx="6" cy="6" r="3" />
+                  <circle cx="18" cy="6" r="3" />
+                  <circle cx="18" cy="18" r="3" />
+                  <circle cx="6" cy="18" r="3" />
+                  <line x1="9" y1="6" x2="15" y2="6" />
+                  <line x1="18" y1="9" x2="18" y2="15" />
+                  <line x1="6" y1="9" x2="6" y2="15" />
+                  <line x1="9" y1="18" x2="15" y2="18" />
+                </svg>
+              </div>
+              <span class="text-base sm:text-[17px] font-medium text-[#26265F] leading-snug font-sans">
+                Other Mutually Agreed Institutional Models
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Bottom Notice: Legal & Confidentiality (1:1 with PDF Page 2) -->
+          <div class="border-t border-[#E4E4E8] pt-6">
+            <p class="text-xs sm:text-sm text-[#62627A] font-normal leading-relaxed font-sans">
+              All discussions would remain confidential and would proceed only with the mutual consent of the participating institutions. Any proposed engagement would be subject to due diligence, applicable regulatory requirements and the independent approval of the concerned parties.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Vertical Portrait Image of 3 Doctors in Modern Hospital Atrium (matching full height of left column) -->
+        <div class="lg:col-span-4 h-full min-h-[480px] relative overflow-hidden bg-[#F7F7F5] flex">
+          <img 
+            src="assets/network-doctors-atrium.jpg" 
+            alt="LIMRA Healthcare clinicians collaborating in modern hospital atrium" 
+            class="w-full h-full object-cover object-center"
+          >
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: CREATING VALUE ACROSS BORDERS (PDF PAGE 3) ================= -->
+  <!-- Top Split: Title & Narrative Copy + Daytime City Skyline Photo | Bottom Split: Two Bilateral Columns -->
+  <section class="w-full bg-[#F7F7F5] py-16 sm:py-20 lg:py-28 border-b border-[#E4E4E8]">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24">
+      
+      <!-- Top Half: Header & Intro Split with Daytime Cityscape Photo -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mb-16 lg:mb-20">
+        
+        <!-- Left: Section Title & Copy (~45% width) -->
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-[#26265F] tracking-tight font-sans inline-block relative pb-3 mb-6">
+            Creating Value<br>Across Borders
+            <span class="absolute bottom-0 left-0 w-20 h-1 bg-[#EE4038]"></span>
+          </h2>
+          <p class="text-lg sm:text-xl lg:text-[22px] font-normal text-[#26265F] leading-snug font-sans mb-6">
+            Healthcare institutions would be identified and introduced selectively according to the clinical, operational and institutional priorities of each Philippine partner.
+          </p>
+          <p class="text-xs sm:text-sm text-[#62627A] font-normal leading-relaxed font-sans border-l-2 border-[#EE4038] pl-4">
+            LIMRA Health Care does not claim exclusive or formal representation of any healthcare organisation unless supported by appropriate written authorisation. Hospital-specific discussions would proceed only with the knowledge and participation of the concerned institution.
+          </p>
+        </div>
+
+        <!-- Right: Daytime City Skyline Banner (~55% width) -->
+        <div class="lg:col-span-7 h-[280px] sm:h-[360px] lg:h-[400px] relative overflow-hidden bg-[#26265F]">
+          <img 
+            src="assets/network-city-skyline-day.jpg" 
+            alt="Creating Value Across Borders international metropolitan healthcare centers" 
+            class="w-full h-full object-cover object-center"
+          >
+          <div class="absolute inset-0 bg-[#26265F]/10"></div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Half: Two Distinct Bilateral Capability Columns (1:1 with PDF Page 3) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        
+        <!-- Column 1: For Philippine Healthcare Institutions (Clean sharp card without top outline) -->
+        <div class="bg-white p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-8">
+              <!-- Philippine Flag SVG Vector -->
+              <svg class="w-8 h-5 border border-[#E4E4E8] flex-shrink-0" viewBox="0 0 600 300">
+                <rect width="600" height="150" fill="#0038A8"/>
+                <rect y="150" width="600" height="150" fill="#CE1126"/>
+                <polygon points="0,0 260,150 0,300" fill="#FFFFFF"/>
+                <circle cx="86.6" cy="150" r="30" fill="#FCD116"/>
+                <polygon points="40,150 48,153 53,160 54,151 62,148 54,145 53,136 48,143" fill="#FCD116"/>
+                <polygon points="133,150 125,153 120,160 119,151 111,148 119,145 120,136 125,143" fill="#FCD116"/>
+                <polygon points="86.6,103 89.6,111 96.6,116 87.6,117 84.6,125 81.6,117 72.6,116 79.6,111" fill="#FCD116"/>
+                <polygon points="86.6,197 89.6,189 96.6,184 87.6,183 84.6,175 81.6,183 72.6,184 79.6,189" fill="#FCD116"/>
+              </svg>
+              <h3 class="text-xl sm:text-2xl font-semibold text-[#26265F] tracking-tight font-sans">
+                For Philippine Healthcare Institutions
+              </h3>
+            </div>
+
+            <!-- List of 6 Value Points with Clean Red Dividers -->
+            <ul class="divide-y divide-[#E4E4E8] text-[#26265F]">
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>Access to suitable Indian healthcare institutions</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>Specialist and clinical collaboration</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>CME and training opportunities</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>Specialty-development discussions</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>Technology and knowledge exchange</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#EE4038] font-bold text-lg leading-none mt-1">›</span>
+                <span>Senior healthcare leadership engagement</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 2: For Indian Healthcare Institutions (Clean sharp card without top outline) -->
+        <div class="bg-white p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-8">
+              <!-- Indian Flag SVG Vector -->
+              <svg class="w-8 h-5 border border-[#E4E4E8] flex-shrink-0" viewBox="0 0 600 300">
+                <rect width="600" height="100" fill="#FF9933"/>
+                <rect y="100" width="600" height="100" fill="#FFFFFF"/>
+                <rect y="200" width="600" height="100" fill="#138808"/>
+                <circle cx="300" cy="150" r="38" fill="none" stroke="#000080" stroke-width="4"/>
+                <circle cx="300" cy="150" r="7" fill="#000080"/>
+              </svg>
+              <h3 class="text-xl sm:text-2xl font-semibold text-[#26265F] tracking-tight font-sans">
+                For Indian Healthcare Institutions
+              </h3>
+            </div>
+
+            <!-- List of 6 Value Points with Clean Navy Dividers -->
+            <ul class="divide-y divide-[#E4E4E8] text-[#26265F]">
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Philippine institutional introductions</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Healthcare relationship development</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Leadership-level engagement</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Clinical and academic collaboration opportunities</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Market-development support</span>
+              </li>
+              <li class="py-4 text-base sm:text-lg font-normal flex items-start space-x-3">
+                <span class="text-[#26265F] font-bold text-lg leading-none mt-1">›</span>
+                <span>Continuity and local coordination in the Philippines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: PARTNERSHIP & COORDINATION HUB - MANILA (PDF PAGE 4) ================= -->
+  <!-- Top: Header with Red Underline | Middle Split: Left Narrative + Right Supported Focus Areas | Bottom: Manila Bay Coastal Photo -->
+  <section class="w-full bg-white pt-16 sm:pt-20 lg:pt-28 pb-0">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24">
+      
+      <!-- Section Title with Red underline accent (1:1 with PDF Page 4) -->
+      <div class="mb-12 lg:mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#26265F] tracking-tight font-sans inline-block relative pb-3">
+          Partnership &amp; Coordination Hub – Manila
+          <span class="absolute bottom-0 left-0 w-20 h-1 bg-[#EE4038]"></span>
+        </h2>
+      </div>
+
+      <!-- Two-Column Content Split -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-14 lg:mb-20">
+        
+        <!-- Left: Manila Launch Narrative (~48% width) -->
+        <div class="lg:col-span-6 space-y-6">
+          <h3 class="text-xl sm:text-2xl lg:text-[25px] font-semibold text-[#26265F] leading-snug font-sans">
+            Beginning in early 2027, LIMRA Health Care plans to establish a dedicated healthcare partnership and coordination presence in Manila.
+          </h3>
+          <p class="text-base sm:text-lg text-[#62627A] font-normal leading-[1.7] font-sans">
+            The proposed hub would provide continuity beyond individual conferences, institutional visits and introductory meetings. It would support structured follow-up, stakeholder engagement and the development of sustainable India–Philippines healthcare relationships.
+          </p>
+        </div>
+
+        <!-- Right: The Proposed Manila Hub Would Support (Clean container without left outline) -->
+        <div class="lg:col-span-6 bg-[#F7F7F5] p-8 sm:p-10">
+          <span class="text-lg sm:text-xl font-semibold text-[#EE4038] font-sans tracking-tight block mb-6">
+            The proposed Manila hub would support:
+          </span>
+          
+          <ul class="divide-y divide-[#E4E4E8] text-[#26265F]">
+            <li class="py-3.5 text-base sm:text-lg font-medium">Philippine Hospital Engagement</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">Indian Healthcare Delegations</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">Clinical &amp; Specialist Collaboration</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">CME &amp; Training Programs</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">Healthcare Leadership Meetings</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">Long-Term Partnership Development</li>
+            <li class="py-3.5 text-base sm:text-lg font-medium">Institutional Coordination and Follow-Up</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom: Manila Bay Waterfront Panoramic Image Banner (Full Bleed Left, Right, and Bottom) -->
+    <div class="w-full h-72 sm:h-96 lg:h-[440px] xl:h-[500px] relative overflow-hidden bg-[#26265F]">
+      <img 
+        src="assets/network-manila-bay-waterfront.jpg" 
+        alt="Partnership and Coordination Hub Manila Bay waterfront skyline" 
+        class="w-full h-full object-cover object-center"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-[#26265F]/30 via-transparent to-transparent"></div>
+    </div>
+
+  </section>
+
+  <!-- ================= INSTITUTIONAL INQUIRY MODAL ================= -->
+  <div id="inquiry-modal" class="fixed inset-0 z-50 bg-[#26265F]/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white max-w-xl w-full p-8 sm:p-10 relative max-h-[90vh] overflow-y-auto">
+      
+      <button class="close-inquiry-modal absolute top-6 right-6 text-[#62627A] hover:text-[#26265F]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="eyebrow block mb-1 text-xs uppercase tracking-widest text-[#EE4038] font-bold">Institutional Engagement</span>
+        <h3 class="text-2xl font-bold text-[#26265F]">Explore Collaboration with LIMRA</h3>
+        <p class="text-xs text-[#62627A] mt-1">
+          Direct dialogue between Indian & Philippine healthcare institutions and leaders.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+        <input type="hidden" name="access_key" value="5f3f0605-c622-438a-95d5-adff3a116b00">
+        <input type="hidden" name="to_email" value="rpdarun@gmail.com">
+        <input type="hidden" name="subject" value="New LIMRA Healthcare Institutional Inquiry">
+        <input type="hidden" name="from_name" value="LIMRA Health Care Portal">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div>
+          <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Your Full Name</label>
+          <input type="text" name="name" required placeholder="e.g. Dr. Maria Santos / Mr. Rajesh Kumar" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Institution / Organization</label>
+            <input type="text" name="institution" required placeholder="Hospital / University / Group" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Designation / Role</label>
+            <select name="designation" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Chairperson / Board Member">Chairperson / Board Member</option>
+              <option value="CEO / CFO / Managing Director">CEO / CFO / Managing Director</option>
+              <option value="Medical Director / Chief Medical Officer">Medical Director / CMO</option>
+              <option value="Senior Clinician / Department Head">Senior Clinician / Dept Head</option>
+              <option value="Healthcare Strategy / Corporate Planning">Strategy & Development</option>
+              <option value="Other Stakeholder">Other Stakeholder</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Primary Interest Area</label>
+            <select name="partnership_interest" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Hospital Partnerships">Hospital Partnerships</option>
+              <option value="Clinical Collaboration">Clinical Collaboration</option>
+              <option value="Leadership Engagement">Leadership Engagement</option>
+              <option value="Strategic Healthcare Development">Strategic Development & JV</option>
+              <option value="CME & Training Programs">CME & Capacity Training</option>
+              <option value="General Exploration">General Exploration</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Country</label>
+            <select name="country" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Philippines">Philippines</option>
+              <option value="India">India</option>
+              <option value="Other">Other International</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Email Address</label>
+            <input type="email" name="email" required placeholder="name@institution.com" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Contact Number</label>
+            <input type="tel" name="phone" placeholder="+63 / +91 ..." class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Discussion Outline / Agenda</label>
+          <textarea name="message" rows="3" placeholder="Please share brief context on your institutional priorities..." class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]"></textarea>
+        </div>
+
+        <div class="text-xs text-[#62627A] leading-relaxed">
+          * All communications are held in strict institutional confidentiality.
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-[#26265F] hover:bg-[#EE4038] text-white font-semibold text-sm transition-colors uppercase tracking-wider">
+          Submit Institutional Inquiry
+        </button>
+      </form>
+
+      <!-- Success Confirmation State -->
+      <div id="inquiry-success" class="hidden text-center py-8">
+        <div class="w-12 h-12 bg-green-100 text-green-700 flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+          ✓
+        </div>
+        <h4 class="text-xl font-bold text-[#26265F] mb-2">Thank you for your message</h4>
+        <p class="text-sm text-[#62627A] max-w-sm mx-auto mb-6">
+          Your inquiry has been routed directly to the LIMRA leadership desk. Our team will contact you confidentially.
+        </p>
+        <button class="close-inquiry-modal px-6 py-2.5 bg-[#26265F] text-white text-sm font-semibold">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL UNIFIED FOOTER ================= -->
+  <footer class="bg-[#26265F] text-white/80 text-sm pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Left Col: Logo & Positioning -->
+        <div class="md:col-span-5">
+          <img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[53px] w-auto object-contain mb-4">
+          <p class="text-white/95 font-semibold text-base mb-2">India–Philippines Healthcare Partnerships</p>
+          <p class="text-white/75 text-sm max-w-sm leading-relaxed mb-4">
+            Connecting institutions, clinical expertise, healthcare leadership and strategic opportunities across India and the Philippines.
+          </p>
+          <div class="text-xs sm:text-sm text-[#40F6FF] font-medium tracking-wide">
+            Chennai, India • Manila, Philippines
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="md:col-span-3">
+          <span class="text-xs sm:text-sm uppercase tracking-widest text-white font-bold block mb-4">Navigation</span>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="about.html" class="hover:text-[#40F6FF] transition-colors">About</a></li>
+            <li><a href="platform.html" class="hover:text-[#40F6FF] transition-colors">Platform</a></li>
+            <li><a href="network.html" class="text-[#40F6FF] font-semibold transition-colors">Network</a></li>
+            <li><a href="contact.html" class="hover:text-[#40F6FF] transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Compliance & Legal Boundaries -->
+        <div class="md:col-span-4 text-xs sm:text-sm text-white/70 leading-relaxed">
+          <span class="text-xs sm:text-sm uppercase tracking-widest text-white font-bold block mb-4">Institutional Guardrails</span>
+          <p class="mb-3">
+            LIMRA is an India–Philippines healthcare partnership and development platform. LIMRA is not a hospital agent, medical-tourism company, patient-referral broker, or healthcare investment fund.
+          </p>
+          <p>
+            Clinical decisions always remain exclusively with licensed doctors, hospitals, and patients. All strategic conversations remain subject to independent regulatory approval.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-white/60">
+        <div>
+          © 2026 LIMRA. All rights reserved. Chennai • Manila.
+        </div>
+        <div class="mt-4 sm:mt-0 flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Back to Top ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Client Script -->
+  <script src="script.js"></script>
+</body>
+</html>

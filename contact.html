@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | LIMRA Healthcare Partnerships</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <!-- Google Material Symbols (Line style) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#26265F',
+              heroNavy: '#26265F',
+              dark: '#26265F',
+              canvas: '#F7F7F5',
+              red: '#EE4038',
+              cyan: '#40F6FF',
+              coral: '#FF8D8D',
+              border: '#E4E4E8',
+              muted: '#62627A',
+            }
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F7F7F5] text-[#26265F] font-sans antialiased selection:bg-[#EE4038] selection:text-white">
+
+  <!-- ================= FIXED NAVIGATION BAR ================= -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24 h-16 sm:h-[72px] lg:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group" aria-label="LIMRA Healthcare Home">
+        <img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[43px] sm:h-[47px] lg:h-[53px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-7 lg:space-x-10 text-xs lg:text-[13px] font-bold tracking-[0.06em] text-white uppercase">
+        <a href="index.html" class="text-white hover:text-[#40F6FF] transition-colors py-1 flex items-center gap-1.5" title="Home" aria-label="Home">
+          <svg class="w-4 h-4 mb-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+          <span>HOME</span>
+        </a>
+        <a href="about.html" class="hover:text-[#40F6FF] transition-colors py-1">ABOUT</a>
+        <a href="platform.html" class="hover:text-[#40F6FF] transition-colors py-1">PLATFORM</a>
+        <a href="network.html" class="hover:text-[#40F6FF] transition-colors py-1">NETWORK</a>
+        <a href="contact.html" class="text-[#40F6FF] py-1 border-b-2 border-[#40F6FF]">CONTACT</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-[#40F6FF] focus:outline-none" aria-label="Open navigation menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-[#26265F]/98 backdrop-blur-xl hidden flex flex-col justify-between p-8 text-white">
+    <div>
+      <div class="flex justify-between items-center pb-6 border-b border-white/10">
+        <a href="index.html"><img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[43px] w-auto object-contain"></a>
+        <button id="close-mobile-drawer" class="p-2 text-white/80 hover:text-white">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl font-bold tracking-wide uppercase mt-8">
+        <a href="index.html" class="mobile-nav-link text-white hover:text-[#40F6FF] flex items-center gap-3">
+          <svg class="w-5 h-5 text-[#40F6FF]" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+          <span>HOME</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link hover:text-[#40F6FF]">ABOUT</a>
+        <a href="platform.html" class="mobile-nav-link hover:text-[#40F6FF]">PLATFORM</a>
+        <a href="network.html" class="mobile-nav-link hover:text-[#40F6FF]">NETWORK</a>
+        <a href="contact.html" class="mobile-nav-link text-[#40F6FF]">CONTACT</a>
+      </nav>
+    </div>
+    <div class="pt-8 border-t border-white/10">
+      <button class="open-inquiry-modal w-full py-3.5 bg-[#EE4038] text-white font-semibold text-center block uppercase tracking-wider text-sm">
+        Explore Collaboration
+      </button>
+      <p class="text-xs text-white/50 text-center mt-4 font-mono">Chennai, India • Manila, Philippines</p>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 1: HERO ================= -->
+  <!-- Full-width edge-to-edge modern glass facade photo with left 15% transparent navy solid box touching nav bar bottom line -->
+  <section class="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] xl:min-h-[740px] flex items-stretch justify-start overflow-hidden pt-16 sm:pt-[72px] lg:pt-20 border-b border-[#E4E4E8]">
+    
+    <!-- Full-width Edge-to-Edge Background Image (Optimized modern glass facade) -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="assets/contact-hero-facade.jpg" 
+        alt="LIMRA Healthcare institutional partnerships" 
+        class="w-full h-full object-cover object-[70%_center] sm:object-right"
+      >
+      <!-- Subtle ambient tone -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20 pointer-events-none"></div>
+    </div>
+
+    <!-- Left Bleed Navy Solid Overlay Panel (15% Transparency, 85% Opacity, touching left edge completely) -->
+    <div class="relative z-10 w-full lg:w-[48%] xl:w-[44%] bg-[#26265F]/85 backdrop-blur-[4px] flex flex-col justify-center px-8 sm:px-14 lg:px-18 xl:px-24 py-14 sm:py-18 lg:py-24 text-white border-r-0 lg:border-r border-white/10">
+      <div class="max-w-xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-semibold text-white leading-[1.12] tracking-tight mb-6 sm:mb-8 font-sans">
+          Let’s Build Meaningful<br>
+          <span class="text-[#40F6FF]">Healthcare Partnerships</span>
+        </h1>
+        
+        <!-- Coral accent line (1:1 with PDF) -->
+        <div class="w-16 h-1 bg-[#EE4038] mb-8"></div>
+
+        <p class="text-base sm:text-lg lg:text-[19px] xl:text-[21px] text-white font-normal leading-[1.65] font-sans">
+          Healthcare Market Development | Investment, Joint Venture and Expansion Opportunities
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= SECTION 2: FILLABLE INQUIRY FORM ================= -->
+  <section class="w-full bg-[#F7F7F5] py-16 sm:py-20 lg:py-28">
+    <div class="max-w-[1920px] mx-auto px-6 sm:px-12 lg:px-24">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12 lg:mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#EE4038] uppercase block mb-3 font-sans">
+          Institutional Engagement Desk
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#26265F] tracking-tight font-sans inline-block relative pb-3">
+          Begin The Conversation
+          <span class="absolute bottom-0 left-0 w-20 h-1 bg-[#EE4038]"></span>
+        </h2>
+        <p class="text-base sm:text-lg text-[#62627A] font-normal leading-[1.65] mt-4 font-sans">
+          Connect directly with LIMRA leadership. Please complete the details below to initiate structured, confidential dialogue between Indian and Philippine healthcare stakeholders.
+        </p>
+      </div>
+
+      <!-- Main Form Container: Sharp edges, 100% brand styling -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        
+        <!-- Left: Fillable Form Card (lg:col-span-8) -->
+        <div class="lg:col-span-8 bg-white p-8 sm:p-12 lg:p-14 border border-[#E4E4E8]">
+          <form id="contact-page-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <!-- Web3Forms Integration -->
+            <input type="hidden" name="access_key" value="5f3f0605-c622-438a-95d5-adff3a116b00">
+            <input type="hidden" name="to_email" value="rpdarun@gmail.com">
+            <input type="hidden" name="subject" value="New LIMRA Healthcare Collaboration Inquiry">
+            <input type="hidden" name="from_name" value="LIMRA Healthcare Contact Form">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <!-- Row 1: Full Name & Designation -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Your Full Name <span class="text-[#EE4038]">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  required 
+                  placeholder="e.g. Dr. Maria Santos / Mr. Rajesh Kumar" 
+                  class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] placeholder-gray-400 focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors"
+                >
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Designation / Role <span class="text-[#EE4038]">*</span>
+                </label>
+                <select name="designation" class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors">
+                  <option value="Chairperson / Board Member">Chairperson / Board Member</option>
+                  <option value="CEO / CFO / Managing Director">CEO / CFO / Managing Director</option>
+                  <option value="Medical Director / Chief Medical Officer">Medical Director / CMO</option>
+                  <option value="Senior Clinician / Department Head">Senior Clinician / Department Head</option>
+                  <option value="Healthcare Strategy / Corporate Planning">Healthcare Strategy / Corporate Planning</option>
+                  <option value="Other Stakeholder">Other Stakeholder</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 2: Institution & Country -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Institution / Organization <span class="text-[#EE4038]">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="institution" 
+                  required 
+                  placeholder="e.g. Hospital Group, Medical College, Clinical Trust" 
+                  class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] placeholder-gray-400 focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors"
+                >
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Country <span class="text-[#EE4038]">*</span>
+                </label>
+                <select name="country" class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors">
+                  <option value="Philippines">Philippines</option>
+                  <option value="India">India</option>
+                  <option value="Other">Other International</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 3: Email & Contact Number -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Institutional Email <span class="text-[#EE4038]">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  required 
+                  placeholder="name@institution.com" 
+                  class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] placeholder-gray-400 focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors"
+                >
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                  Direct Phone / Mobile <span class="text-[#EE4038]">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  required
+                  placeholder="+63 / +91 ..." 
+                  class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] placeholder-gray-400 focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors"
+                >
+              </div>
+            </div>
+
+            <!-- Row 4: Primary Partnership Area -->
+            <div>
+              <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                Primary Area of Interest
+              </label>
+              <select name="partnership_interest" class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors">
+                <option value="Hospital Partnerships">Hospital-to-Hospital Partnerships</option>
+                <option value="Clinical Collaboration">Clinical Collaboration & Specialist Exchange</option>
+                <option value="CME & Training Programs">CME & Capacity Development</option>
+                <option value="Leadership Engagement">Senior Leadership Engagement</option>
+                <option value="Specialty Development">Centres of Excellence & Specialty Development</option>
+                <option value="Strategic Healthcare Investment">Strategic Investment & Joint Ventures</option>
+                <option value="General Exploration">General Institutional Exploration</option>
+              </select>
+            </div>
+
+            <!-- Row 5: Message / Collaboration Context -->
+            <div>
+              <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-2 font-sans">
+                Discussion Agenda / Collaboration Context
+              </label>
+              <textarea 
+                rows="4" 
+                name="message" 
+                placeholder="Please outline your institution's strategic objectives, specialty focus, or partnership timeline..." 
+                class="w-full px-4 py-3 border border-[#E4E4E8] text-base text-[#26265F] placeholder-gray-400 focus:outline-none focus:border-[#26265F] rounded-none bg-white transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Trust / Confidentiality Statement -->
+            <div class="p-4 bg-[#DDF8FA] flex items-start space-x-3">
+              <svg class="w-5 h-5 text-[#26265F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              <p class="text-xs text-[#26265F] font-normal leading-relaxed font-sans">
+                All communications are treated with strict institutional confidentiality. LIMRA Health Care will route your submission directly to the executive desk.
+              </p>
+            </div>
+
+            <!-- Error Banner Container -->
+            <div id="contact-form-error" class="hidden p-4 bg-red-50 border-l-4 border-[#EE4038] text-red-800 text-xs font-medium font-sans"></div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="w-full py-4 bg-[#26265F] hover:bg-[#EE4038] text-white font-semibold text-sm uppercase tracking-wider transition-colors rounded-none block"
+            >
+              Submit Collaboration Request
+            </button>
+
+          </form>
+
+          <!-- Success Message State -->
+          <div id="contact-success-state" class="hidden text-center py-12">
+            <div class="w-16 h-16 bg-green-100 text-green-700 flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              ✓
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-[#26265F] mb-3 font-sans">
+              Thank You for Reaching Out
+            </h3>
+            <p class="text-base text-[#62627A] max-w-md mx-auto mb-8 font-normal font-sans">
+              Your inquiry has been received. A senior LIMRA healthcare partner will review your institutional details and reach out confidentially.
+            </p>
+            <button 
+              id="contact-reset-btn" 
+              class="px-8 py-3 bg-[#26265F] hover:bg-[#EE4038] text-white text-xs font-semibold uppercase tracking-wider transition-colors"
+            >
+              Send Another Inquiry
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right: Institutional Sidebar Info (lg:col-span-4) -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- Box 1: Quick Direct Contacts Card -->
+          <div class="bg-white p-8 border border-[#E4E4E8]">
+            <h3 class="text-lg font-semibold text-[#26265F] mb-4 font-sans">
+              Executive Direct Contacts
+            </h3>
+            
+            <div class="space-y-4 text-sm font-sans">
+              <div>
+                <span class="text-xs text-[#EE4038] font-semibold uppercase tracking-wider block">Executive Director</span>
+                <p class="text-base font-semibold text-[#26265F]">Mohammed Ghani</p>
+              </div>
+
+              <div>
+                <span class="text-xs text-[#62627A] uppercase tracking-wider block">Direct Line</span>
+                <p class="font-mono text-[#26265F]">+91 98844 02678</p>
+                <p class="font-mono text-[#26265F]">+91 94443 75000</p>
+              </div>
+
+              <div>
+                <span class="text-xs text-[#62627A] uppercase tracking-wider block">Official Email</span>
+                <a href="mailto:ghani@limrahealth.com" class="text-[#26265F] font-medium hover:text-[#EE4038] underline transition-colors">
+                  ghani@limrahealth.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 2: Institutional Offices -->
+          <div class="bg-white p-8 border border-[#E4E4E8]">
+            <h3 class="text-lg font-semibold text-[#26265F] mb-4 font-sans">
+              Office Locations
+            </h3>
+
+            <div class="space-y-6 text-sm font-sans text-[#26265F]">
+              <div>
+                <span class="text-xs text-[#EE4038] font-bold uppercase tracking-wider block mb-1">
+                  Chennai, India
+                </span>
+                <p class="text-[#62627A] leading-relaxed">
+                  No.177, Royapettah High Road.,<br>
+                  SMS Centre 1st Floor, Mylapore,<br>
+                  Chennai - 600 004, Tamil Nadu, India
+                </p>
+              </div>
+
+              <div class="border-t border-[#E4E4E8] pt-4">
+                <span class="text-xs text-[#26265F] font-bold uppercase tracking-wider block mb-1">
+                  Philippines Presence
+                </span>
+                <p class="text-[#62627A] leading-relaxed">
+                  <strong>Manila Hub:</strong> Dedicated coordination presence (Early 2027)<br>
+                  <strong>Cebu:</strong> Regional institutional liaison
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 3: Institutional Guardrails Notice -->
+          <div class="bg-[#26265F] p-8 text-white">
+            <h4 class="text-sm font-semibold uppercase tracking-wider mb-3 text-[#40F6FF] font-sans">
+              Governance & Confidentiality
+            </h4>
+            <p class="text-xs text-white/80 font-normal leading-relaxed font-sans">
+              LIMRA is an India–Philippines healthcare platform facilitating institutional partnerships, clinical cooperation, and strategic development. Clinical decisions always remain exclusively with licensed doctors and hospitals.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INSTITUTIONAL INQUIRY MODAL ================= -->
+  <div id="inquiry-modal" class="fixed inset-0 z-50 bg-[#26265F]/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white max-w-xl w-full p-8 sm:p-10 relative max-h-[90vh] overflow-y-auto">
+      
+      <button class="close-inquiry-modal absolute top-6 right-6 text-[#62627A] hover:text-[#26265F]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="eyebrow block mb-1 text-xs uppercase tracking-widest text-[#EE4038] font-bold">Institutional Engagement</span>
+        <h3 class="text-2xl font-bold text-[#26265F]">Explore Collaboration with LIMRA</h3>
+        <p class="text-xs text-[#62627A] mt-1">
+          Direct dialogue between Indian & Philippine healthcare institutions and leaders.
+        </p>
+      </div>
+
+
+      <!-- Form -->
+      <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+        <input type="hidden" name="access_key" value="5f3f0605-c622-438a-95d5-adff3a116b00">
+        <input type="hidden" name="to_email" value="rpdarun@gmail.com">
+        <input type="hidden" name="subject" value="New LIMRA Healthcare Institutional Inquiry">
+        <input type="hidden" name="from_name" value="LIMRA Health Care Portal">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div>
+          <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Your Full Name</label>
+          <input type="text" name="name" required placeholder="e.g. Dr. Maria Santos / Mr. Rajesh Kumar" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Institution / Organization</label>
+            <input type="text" name="institution" required placeholder="Hospital / University / Group" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Designation / Role</label>
+            <select name="designation" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Chairperson / Board Member">Chairperson / Board Member</option>
+              <option value="CEO / CFO / Managing Director">CEO / CFO / Managing Director</option>
+              <option value="Medical Director / Chief Medical Officer">Medical Director / CMO</option>
+              <option value="Senior Clinician / Department Head">Senior Clinician / Dept Head</option>
+              <option value="Healthcare Strategy / Corporate Planning">Strategy & Development</option>
+              <option value="Other Stakeholder">Other Stakeholder</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Primary Interest Area</label>
+            <select name="partnership_interest" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Hospital Partnerships">Hospital Partnerships</option>
+              <option value="Clinical Collaboration">Clinical Collaboration</option>
+              <option value="Leadership Engagement">Leadership Engagement</option>
+              <option value="Strategic Healthcare Development">Strategic Development & JV</option>
+              <option value="CME & Training Programs">CME & Capacity Training</option>
+              <option value="General Exploration">General Exploration</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Country</label>
+            <select name="country" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F] bg-white text-[#26265F]">
+              <option value="Philippines">Philippines</option>
+              <option value="India">India</option>
+              <option value="Other">Other International</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Email Address</label>
+            <input type="email" name="email" required placeholder="name@institution.com" class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Contact Number</label>
+            <input type="tel" name="phone" placeholder="+63 / +91 ..." class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-[#26265F] uppercase tracking-wider mb-1">Discussion Outline / Agenda</label>
+          <textarea name="message" rows="3" placeholder="Please share brief context on your institutional priorities..." class="w-full px-4 py-2.5 border border-[#E4E4E8] text-sm focus:outline-none focus:border-[#26265F]"></textarea>
+        </div>
+
+        <div class="text-xs text-[#62627A] leading-relaxed">
+          * All communications are held in strict institutional confidentiality.
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-[#26265F] hover:bg-[#EE4038] text-white font-semibold text-sm transition-colors uppercase tracking-wider">
+          Submit Institutional Inquiry
+        </button>
+      </form>
+
+      <!-- Success Confirmation State -->
+      <div id="inquiry-success" class="hidden text-center py-8">
+        <div class="w-12 h-12 bg-green-100 text-green-700 flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+          ✓
+        </div>
+        <h4 class="text-xl font-bold text-[#26265F] mb-2">Thank you for your message</h4>
+        <p class="text-sm text-[#62627A] max-w-sm mx-auto mb-6">
+          Your inquiry has been routed directly to the LIMRA leadership desk. Our team will contact you confidentially.
+        </p>
+        <button class="close-inquiry-modal px-6 py-2.5 bg-[#26265F] text-white text-sm font-semibold">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL UNIFIED FOOTER ================= -->
+  <footer class="bg-[#26265F] text-white/80 text-sm pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Left Col: Logo & Positioning -->
+        <div class="md:col-span-5">
+          <img src="assets/limra_healthcare_logo_white.png" alt="LIMRA Healthcare" class="h-[53px] w-auto object-contain mb-4">
+          <p class="text-white/95 font-semibold text-base mb-2">India–Philippines Healthcare Partnerships</p>
+          <p class="text-white/75 text-sm max-w-sm leading-relaxed mb-4">
+            Connecting institutions, clinical expertise, healthcare leadership and strategic opportunities across India and the Philippines.
+          </p>
+          <div class="text-xs sm:text-sm text-[#40F6FF] font-medium tracking-wide">
+            Chennai, India • Manila, Philippines
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="md:col-span-3">
+          <span class="text-xs sm:text-sm uppercase tracking-widest text-white font-bold block mb-4">Navigation</span>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="about.html" class="hover:text-[#40F6FF] transition-colors">About</a></li>
+            <li><a href="platform.html" class="hover:text-[#40F6FF] transition-colors">Platform</a></li>
+            <li><a href="network.html" class="hover:text-[#40F6FF] transition-colors">Network</a></li>
+            <li><a href="contact.html" class="text-[#40F6FF] font-semibold transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Compliance & Legal Boundaries -->
+        <div class="md:col-span-4 text-xs sm:text-sm text-white/70 leading-relaxed">
+          <span class="text-xs sm:text-sm uppercase tracking-widest text-white font-bold block mb-4">Institutional Guardrails</span>
+          <p class="mb-3">
+            LIMRA is an India–Philippines healthcare partnership and development platform. LIMRA is not a hospital agent, medical-tourism company, patient-referral broker, or healthcare investment fund.
+          </p>
+          <p>
+            Clinical decisions always remain exclusively with licensed doctors, hospitals, and patients. All strategic conversations remain subject to independent regulatory approval.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-white/60">
+        <div>
+          © 2026 LIMRA. All rights reserved. Chennai • Manila.
+        </div>
+        <div class="mt-4 sm:mt-0 flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Back to Top ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Page specific script for on-page form submit with Web3Forms -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contact-page-form');
+      const contactSuccess = document.getElementById('contact-success-state');
+      const contactReset = document.getElementById('contact-reset-btn');
+      const errorDiv = document.getElementById('contact-form-error');
+
+      if (contactForm && contactSuccess) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (errorDiv) errorDiv.classList.add('hidden');
+          
+          const submitBtn = contactForm.querySelector('button[type="submit"]');
+          const origText = submitBtn ? submitBtn.innerText : 'Submit';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Submitting...';
+          }
+          
+          try {
+            const formData = new FormData(contactForm);
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            });
+            const data = await response.json();
+            
+            if (data.success) {
+              contactForm.classList.add('hidden');
+              contactSuccess.classList.remove('hidden');
+            } else {
+              if (errorDiv) {
+                errorDiv.innerHTML = '<strong>Submission Error:</strong> ' + (data.message || 'Invalid Access Key. Please provide a valid Web3Forms Access Key.');
+                errorDiv.classList.remove('hidden');
+              } else {
+                alert(data.message || 'Submission failed. Please verify your Web3Forms Access Key.');
+              }
+            }
+          } catch (err) {
+            console.error('Web3Forms dispatch error:', err);
+            if (errorDiv) {
+              errorDiv.innerHTML = '<strong>Connection Error:</strong> Could not connect to Web3Forms. Please check your internet connection.';
+              errorDiv.classList.remove('hidden');
+            }
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerText = origText;
+            }
+          }
+        });
+      }
+
+      if (contactReset && contactForm && contactSuccess) {
+        contactReset.addEventListener('click', () => {
+          contactForm.reset();
+          if (errorDiv) errorDiv.classList.add('hidden');
+          contactSuccess.classList.add('hidden');
+          contactForm.classList.remove('hidden');
+        });
+      }
+    });
+  </script>
+  <!-- Global client script -->
+  <script src="script.js"></script>
+</body>
+</html>

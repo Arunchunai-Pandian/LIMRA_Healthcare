@@ -1,0 +1,9 @@
+# Raw media archives & creative working files (>1 GB)
+_source_files/
+
+# macOS / OS metadata
+.DS_Store
+Thumbs.db
+
+# Backup archives
+*.zip
