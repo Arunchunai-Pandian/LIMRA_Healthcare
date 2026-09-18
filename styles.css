@@ -97,13 +97,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.hero-title .hero-subline {
-  text-transform: none !important;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-
 .font-editorial {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
