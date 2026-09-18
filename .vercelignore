@@ -1,0 +1,16 @@
+# Ignore heavy creative archive files (> 1GB)
+_source_files
+_source_files/**
+Video
+Video/**
+Auto-Save
+Auto-Save/**
+*.aep
+*.psd
+
+# Ignore backups and archives
+*.zip
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

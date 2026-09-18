@@ -1,9 +1,14 @@
 # Raw media archives & creative working files (>1 GB)
 _source_files/
+Video/
+Auto-Save/
+*.aep
+*.psd
 
 # macOS / OS metadata
 .DS_Store
 Thumbs.db
 
-# Backup archives
+# Backup archives & Vercel
 *.zip
+.vercel

@@ -69,9 +69,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title span {
-  display: block;
   margin: 0;
   padding: 0;
+}
+
+.hero-title .mobile-line {
+  display: block;
+}
+
+.hero-title .desktop-line {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(26px, 7.5vw, 34px);
+    line-height: 1.06 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title .mobile-line {
+    display: none;
+  }
+  .hero-title .desktop-line {
+    display: block;
+  }
 }
 
 .font-editorial {

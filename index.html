@@ -101,43 +101,55 @@
     </div>
   </div>
 
-  <!-- ================= 1:1 HERO SECTION (FITS 100% WITHIN VISIBLE SCREEN) ================= -->
-  <section class="relative h-screen max-h-screen bg-[#26265F] text-white flex flex-col justify-between pt-16 sm:pt-18 lg:pt-20 overflow-hidden">
+  <!-- ================= 1:1 HERO SECTION (FITS 100% WITHIN VISIBLE SCREEN ON MOBILE & DESKTOP) ================= -->
+  <section class="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] md:h-screen md:min-h-0 md:max-h-screen bg-[#26265F] text-white flex flex-col justify-between pt-16 sm:pt-18 lg:pt-20 overflow-hidden">
     
-    <!-- Hero Background Video with dark brand overlay for readability -->
+    <!-- Hero Background Video with dark brand overlay (Desktop: Hero_video.mp4, Mobile: Mob.mp4) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
+      <!-- Desktop Hero Video -->
+      <video autoplay loop muted playsinline class="hidden md:block w-full h-full object-cover object-center">
         <source src="assets/Hero_video.mp4" type="video/mp4">
+      </video>
+      <!-- Mobile Hero Video (Mob.mp4) -->
+      <video autoplay loop muted playsinline class="block md:hidden w-full h-full object-cover object-center">
+        <source src="assets/Mob.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-[#26265F]/15"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-[#26265F]/30 via-transparent to-[#26265F]/15 pointer-events-none"></div>
     </div>
     
     <!-- Hero Main Canvas Area (Headline + Supporting Text) -->
-    <div class="relative z-10 max-w-[1920px] w-full mx-auto px-6 sm:px-12 lg:px-24 flex-1 flex flex-col justify-between py-3 sm:py-5 lg:py-5 min-h-0">
+    <div class="relative z-10 max-w-[1920px] w-full mx-auto px-5 sm:px-12 lg:px-24 flex-1 flex flex-col justify-between py-2 sm:py-5 lg:py-5 min-h-0">
       
-      <!-- Right-Aligned Massive 3-Line Headline (Fixed Overlap with Discrete Block Spans) -->
-      <div class="w-full flex justify-end mt-4 sm:mt-6 lg:mt-8 xl:mt-12">
+      <!-- Right-Aligned Headline: 4 Lines & Much Bigger on Mobile, 3 Lines on Desktop -->
+      <div class="w-full flex justify-end mt-2 sm:mt-6 lg:mt-8 xl:mt-12">
         <div class="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-[1220px] 2xl:max-w-[1360px] text-right">
-          <h1 class="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-[48px] xl:text-[58px] 2xl:text-[66px]">
-            <span>BUILDING THE BRIDGE BETWEEN</span>
-            <span>HEALTHCARE INSTITUTIONS,</span>
-            <span>EXPERTISE AND OPPORTUNITY.</span>
+          <h1 class="hero-title text-3xl sm:text-4xl md:text-4xl lg:text-[48px] xl:text-[58px] 2xl:text-[66px]">
+            <!-- Mobile 4 Lines (Much Bigger) -->
+            <span class="mobile-line">BUILDING THE BRIDGE</span>
+            <span class="mobile-line">BETWEEN HEALTHCARE</span>
+            <span class="mobile-line">INSTITUTIONS, EXPERTISE</span>
+            <span class="mobile-line">AND OPPORTUNITY.</span>
+
+            <!-- Desktop 3 Lines -->
+            <span class="desktop-line">BUILDING THE BRIDGE BETWEEN</span>
+            <span class="desktop-line">HEALTHCARE INSTITUTIONS,</span>
+            <span class="desktop-line">EXPERTISE AND OPPORTUNITY.</span>
           </h1>
         </div>
       </div>
 
-      <!-- Bottom-Left Supporting Copy (Reduced 10%) -->
-      <div class="w-full mb-4 sm:mb-5 lg:mb-6 xl:mb-8">
-        <p class="text-xs sm:text-sm lg:text-[16px] xl:text-[18px] 2xl:text-[19px] text-white/95 font-normal leading-[1.6] max-w-md sm:max-w-lg lg:max-w-[490px]">
+      <!-- Bottom-Left Supporting Copy -->
+      <div class="w-full mb-2 sm:mb-5 lg:mb-6 xl:mb-8">
+        <p class="text-xs sm:text-sm lg:text-[16px] xl:text-[18px] 2xl:text-[19px] text-white/95 font-normal leading-[1.45] max-w-md sm:max-w-lg lg:max-w-[490px]">
           LIMRA connects Philippine healthcare institutions with Indian healthcare expertise, leadership and strategic opportunities — creating relationships designed to grow into meaningful, long-term collaboration.
         </p>
       </div>
 
     </div>
 
-    <!-- The 4 Bottom Panels (Mobile: Cyan Explore card docked; Desktop: 4 Edge-to-Edge Panels) -->
-    <div class="relative z-10 w-full flex flex-col md:flex-row h-24 sm:h-28 md:h-[190px] lg:h-[210px] xl:h-[250px] 2xl:h-[280px] flex-shrink-0 border-t border-black/10">
+    <!-- The 4 Bottom Panels (Mobile: Cyan Explore card fits cleanly on screen; Desktop: 4 Edge-to-Edge Panels) -->
+    <div class="relative z-10 w-full flex flex-col md:flex-row h-14 sm:h-16 md:h-[190px] lg:h-[210px] xl:h-[250px] 2xl:h-[280px] flex-shrink-0 border-t border-black/10">
       
       <!-- Panel 1: Video Hospital.mp4 (~38% width on desktop, hidden behind/on mobile) -->
       <div class="hidden md:block md:w-[38%] h-full relative overflow-hidden group bg-[#26265F]">
@@ -556,11 +568,8 @@
         <!-- Col 3: Compliance & Legal Boundaries -->
         <div class="md:col-span-4 text-xs sm:text-sm text-white/70 leading-relaxed">
           <span class="text-xs sm:text-sm uppercase tracking-widest text-white font-bold block mb-4">Institutional Guardrails</span>
-          <p class="mb-3">
-            LIMRA is an India–Philippines healthcare partnership and development platform. LIMRA is not a hospital agent, medical-tourism company, patient-referral broker, or healthcare investment fund.
-          </p>
           <p>
-            Clinical decisions always remain exclusively with licensed doctors, hospitals, and patients. All strategic conversations remain subject to independent regulatory approval.
+            LIMRA Healthcare connects institutions, healthcare leaders and clinical ecosystems across India and the Philippines to foster meaningful collaboration, knowledge exchange and sustainable healthcare development. Our approach is built on trust, professional integrity and long-term partnerships, with every engagement guided by appropriate clinical, regulatory and institutional standards.
           </p>
         </div>
 
