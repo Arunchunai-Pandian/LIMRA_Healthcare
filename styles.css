@@ -140,6 +140,12 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
 }
 
+@media (max-width: 767px) {
+  #main-header {
+    background-color: #26265F !important;
+  }
+}
+
 .header-transparent {
   background-color: transparent;
   transition: all 0.3s ease;
