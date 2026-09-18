@@ -97,6 +97,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Hero Supporting Copy: Mobile upward shift of 40px */
+@media (max-width: 767px) {
+  .hero-supporting-copy {
+    transform: translateY(-40px);
+  }
+}
+
+/* Hero Body Text Leading: Explicit 2pt increased in-between line spacing */
+.hero-body-desktop {
+  line-height: 1.85 !important;
+}
+
+.hero-body-mobile {
+  line-height: 1.68 !important;
+}
+
 .font-editorial {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
